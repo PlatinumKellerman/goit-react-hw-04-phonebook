@@ -63,7 +63,7 @@ export function App() {
     }
   };
 
-  const { filter } = this.state;
+  // const { filter } = this.state;
   return (
     <Container>
       <h1>Phonebook</h1>
