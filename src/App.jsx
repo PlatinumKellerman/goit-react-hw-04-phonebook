@@ -14,11 +14,9 @@ export function App() {
     localContacts
   );
   const [filter, setFilter] = useState('');
-  console.log(contacts);
 
   const contactHandler = data => {
     const findContact = contacts.find(contact => contact.name === data.name);
-    console.log(data);
     if (findContact) {
       alert(`${data.name} is already in contact`);
     } else {
