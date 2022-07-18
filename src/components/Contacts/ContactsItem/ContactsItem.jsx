@@ -8,26 +8,23 @@ import {
 } from './ContactsItem.styled';
 
 export function ContactsItem({ filteredContacts, onContactDelete }) {
-  filteredContacts = filteredContacts || [];
-  return filteredContacts.map(({ id, name, number }) => {
-    return (
-      <ListItem key={id}>
-        <ItemName>
-          <FcPhoneAndroid size="20" />
-          {name}:
-        </ItemName>
-        <ItemNumber>{number}</ItemNumber>
-        <DeleteButton
-          id={id}
-          onClick={() => {
-            onContactDelete(id);
-          }}
-        >
-          Delete
-        </DeleteButton>
-      </ListItem>
-    );
-  });
+  return filteredContacts.map(({ id, name, number }) => (
+    <ListItem key={id}>
+      <ItemName>
+        <FcPhoneAndroid size="20" />
+        {name}:
+      </ItemName>
+      <ItemNumber>{number}</ItemNumber>
+      <DeleteButton
+        id={id}
+        onClick={() => {
+          onContactDelete(id);
+        }}
+      >
+        Delete
+      </DeleteButton>
+    </ListItem>
+  ));
 }
 
 ContactsItem.propTypes = {

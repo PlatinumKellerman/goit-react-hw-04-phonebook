@@ -6,7 +6,7 @@ import { Filter } from './components/Filter/index';
 import { useState } from 'react';
 import localContacts from './data/localContacts.json';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import { LOCAL_STORAGE_KEY } from './KEY/localStorageKey';
+import { LOCAL_STORAGE_KEY } from './constans/localStorageKey';
 
 export function App() {
   const [contacts, setContacts] = useLocalStorage(
@@ -34,9 +34,9 @@ export function App() {
 
   const onFilteredContacts = value => {
     const filterNormalize = value.toLowerCase();
-    return contacts.filter(contact => {
-      return contact.name.toLowerCase().includes(filterNormalize);
-    });
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(filterNormalize)
+    );
   };
 
   const onContactDelete = id => {
